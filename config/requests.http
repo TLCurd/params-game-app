@@ -8,4 +8,21 @@ get http://localhost:3000/query_params?name=Travis
 get http://localhost:3000/guess_query?guess=100
 
 ###
-get http://localhost:3000/segment2/101      
+GET http://localhost:3000/segment2/101 
+
+###
+
+POST http://localhost:3000/body_param
+content-type: application/json
+
+{ 
+  "guess" : 99
+}
+
+###
+POST http://localhost:3000/information
+content-type: application/json
+
+{
+  "username" : "harry", "password" : "swordfish"
+}

@@ -46,5 +46,36 @@ class ExamplesController < ApplicationController
 
     render json: {message: the_message}
   end
+
+  # def body_guess
+  #   user_guess = params[:guess].to_i
+  #   answer = 100
+
+  #   if user_guess > answer
+  #     the_message = "Your guess is too high."
+  #   elsif user_guess < answer
+  #     the_message = "Your guess is too low"
+  #   elsif user_guess == answer
+  #     the_message = "You are correct!!!"
+  #   end
+
+  #   render json: {message: the_message}
+  # end
+
+  def validate
+    # id = params[:login]
+    username = params[:username]
+    password = params[:password] 
+
+    if username == "hugh" && password == "swordfish"
+      message = "Valid credentials."
+      render json: {message: message}
+    else
+      message = "You ain't the right one!"
+      render json: {message: message}
+    end
+
+  end
+
 end
  
