@@ -34,7 +34,7 @@ class ExamplesController < ApplicationController
 
   def guess
     user_guess = params[:guess].to_i
-    answer = params[:answer].to_i
+    answer = 100
 
     if user_guess > answer
       the_message = "Your guess is too high."

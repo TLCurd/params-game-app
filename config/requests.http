@@ -5,7 +5,7 @@ get http://localhost:3000/query_params?name=Anthony
 get http://localhost:3000/query_params?name=Travis 
 
 ###
-get http://localhost:3000/guess_query?guess=30
+get http://localhost:3000/guess_query?guess=100
 
 ###
-get http://localhost:3000/segment2/100/100       
+get http://localhost:3000/segment2/101      
