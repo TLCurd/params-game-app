@@ -13,19 +13,38 @@ class ExamplesController < ApplicationController
 
   def guess_query
     # render json: {the_message: "Guess a number"}
-    user_guess = 100
+    user_guess = params[:guess].to_i
     answer = 37
 
-    if params[:guess].to_i > answer
+    if user_guess > answer
       the_message = "Your guess is too high."
-    elsif params[:guess].to_i < answer
-      the_message = "Your gues is too low"
-    elsif params[:guess].to_i == answer
+    elsif user_guess < answer
+      the_message = "Your guess is too low"
+    elsif user_guess == answer
       the_message = "You are correct!!!"
     end
 
     render json: {message: the_message}
   end
 
+  def numbers
+    sum = params[:number_1].to_i + params[:number_2].to_i
+    render json: {message: "The total of the two numbers is #{sum}!"}
+  end
+
+  def guess
+    user_guess = params[:guess].to_i
+    answer = params[:answer].to_i
+
+    if user_guess > answer
+      the_message = "Your guess is too high."
+    elsif user_guess < answer
+      the_message = "Your guess is too low"
+    elsif user_guess == answer
+      the_message = "You are correct!!!"
+    end
+
+    render json: {message: the_message}
+  end
 end
  
