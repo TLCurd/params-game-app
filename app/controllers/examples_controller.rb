@@ -7,7 +7,7 @@ class ExamplesController < ApplicationController
     if first[0].downcase == "a"
       render json: {message: "Your name starts with the first letter of the alphabet!"}
     else
-      render json: name.upcase
+      render json: {message: name.upcase}
     end
   end
 
